@@ -1,9 +1,10 @@
 .tweet-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid #1c1c1c;
+  border: 1px solid #38444d;
   border-radius: 20px;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 .tweet-user-info {
@@ -17,16 +18,38 @@
   margin-right: 20px;
   margin-top: 20px;
   height: 200px;
-  border: 1px solid #1c1c1c;
+  border: 1px solid #38444d;
   border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
 }
-
+.tweet-video-container {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  height: 200px;
+  border: 1px solid #38444d;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.tweet-video-container video {
+  width: 100%;
+  height: 100%;
+}
+.tweet-image {
+  /* background-image: url(https://images.unsplash.com/photo-1600181957705-92f267a2740e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80); */
+  flex-basis: 50%;
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
+}
 .tweet-text-container {
   margin-top: 20px;
   margin-right: 20px;
   margin-left: 20px;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.74);
+  color: #fff;
 }
 
 .tweet-date-container {
@@ -38,11 +61,12 @@
   color: #47525d;
 }
 .tweet-user-profile {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border: 1px solid #979797;
   border-radius: 50%;
-  background-color: red;
+  background-size: cover;
+  background-position: center;
 }
 
 .tweet-user-info {
@@ -56,8 +80,21 @@
   color: white;
 }
 .tweet-user-fullname {
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: bold;
 }
 .tweet-user-username {
-  font-size: 8px;
+  color: #8899a6;
+  font-size: 12px;
+}
+.tweets-welcome-message {
+  color: white;
+  text-align: center;
+}
+.tweets-welcome-message h5 {
+  margin-bottom: 0;
+  font-size: 15px;
+}
+.tweets-welcome-message p {
+  font-size: 12px;
 }

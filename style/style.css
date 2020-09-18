@@ -1,12 +1,13 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+
+  background-color: #15202b;
 }
 .container {
   width: 100%;
   display: flex;
   min-height: 100vh;
-  background-color: #0f0f11;
 }
 .navigation-container {
   width: 20%;
@@ -15,7 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #1c1c1c;
+  border: 1px solid #38444d;
 }
 .main {
   flex: 1;
@@ -24,21 +25,53 @@ body {
 }
 .tweets-sidebar-container {
   display: flex;
-  background-color: cyan;
   flex: 1;
 }
 .tweets-sidebar {
-  width: 200px;
+  width: 300px;
   height: 500px;
-  margin: 20px;
-  background-color: antiquewhite;
+  margin-top: 30px;
+  background: #192734;
+  border-radius: 20px;
+  overflow: hidden;
+  position: fixed;
 }
+.tweets-trending {
+  height: 200px;
+  padding-top: 20px;
+  border-radius: 40px;
+}
+.tweets-trending h5 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.tweets-trending ul {
+  padding: 0;
+  margin: 0;
+}
+.tweets-trending ul li {
+  color: #a5a5a6;
+  font-size: 16px;
+  font-weight: 600;
+  border-top: 0.5px solid #d8d8d8;
+  padding: 8px 0;
+  cursor: pointer;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
 .tweets-list {
   margin: 20px;
+  margin-top: 0;
 }
 .tweets-search-container {
   margin: 20px;
   margin-top: 30px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #979797;
@@ -59,11 +92,15 @@ body {
   color: white;
   font-size: 30px;
   padding-left: 10px;
+  cursor: pointer;
 }
 .navigation {
   color: white;
   margin-top: 30px;
-  width: 100%;
+  position: fixed;
+  width: 20%;
+  min-width: 70px;
+  max-width: 100px;
 }
 .logo {
   display: flex;
@@ -82,8 +119,13 @@ body {
   height: 40px;
   margin-top: 20px;
   /* identical to box height */
-
+}
+.home-link a {
+  text-decoration: none;
   color: #00adff;
+}
+.home-link i {
+  font-size: 30px;
 }
 .profile-container {
   display: flex;
@@ -94,6 +136,24 @@ body {
 .profile {
   width: 45px;
   height: 45px;
+  background-image: url('../images/sami.jpg');
+  background-position: center;
+  background-size: cover;
   border-radius: 50%;
   border: 1px solid #979797;
+}
+.next-page-container {
+  border: 1px solid #1c1c1c;
+  border-radius: 20px;
+  color: #47525d;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  visibility: hidden;
+}
+.next-page-container:hover {
+  background-color: #1c1c1c;
 }
