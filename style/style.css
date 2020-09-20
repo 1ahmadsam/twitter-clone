@@ -8,6 +8,7 @@ body {
   width: 100%;
   display: flex;
   min-height: 100vh;
+  justify-content: center;
 }
 .navigation-container {
   width: 20%;
@@ -17,15 +18,17 @@ body {
   flex-direction: column;
   align-items: center;
   border-right: 1px solid #38444d;
+  flex-shrink: 0;
 }
 .main {
-  flex: 1;
+  flex: 0.3;
+  flex-shrink: 0.2;
   display: flex;
   flex-direction: column;
 }
 .tweets-sidebar-container {
   display: flex;
-  flex: 1;
+  flex: 0.1;
 }
 .tweets-sidebar {
   width: 300px;
