@@ -1,8 +1,6 @@
 const URL = 'http://localhost:3000/tweets';
+const trendURL = 'http://localhost:3000/trends/?id=4118';
 let nextPageUrl = null;
-window.onload = (event) => {
-  getTwitterData();
-};
 
 const onEnter = (e) => {
   if (e.key == 'Enter') {
@@ -19,9 +17,9 @@ const onNextPage = () => {
  */
 const getTwitterData = (nextPage = false) => {
   const search = document.getElementById('search-box').value;
+
   if (!search) return;
   const encodedQuery = encodeURIComponent(search);
-  console.log('search is', encodedQuery);
   let fullUrl = `${URL}?q=${encodedQuery}&count=10`;
   if (nextPage && nextPageUrl) {
     fullUrl = nextPageUrl;
@@ -35,6 +33,59 @@ const getTwitterData = (nextPage = false) => {
     });
 };
 
+const getTrendData = () => {
+  fetch(trendURL)
+    .then((response) => response.json())
+    .then((data) => {
+      populateTrends(data[0].trends);
+    });
+};
+
+function nFormatter(num, digits) {
+  var si = [
+    { value: 1, symbol: '' },
+    { value: 1e3, symbol: 'k' },
+    { value: 1e6, symbol: 'M' },
+    { value: 1e9, symbol: 'G' },
+    { value: 1e12, symbol: 'T' },
+    { value: 1e15, symbol: 'P' },
+    { value: 1e18, symbol: 'E' },
+  ];
+  var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+  var i;
+  for (i = si.length - 1; i > 0; i--) {
+    if (num >= si[i].value) {
+      break;
+    }
+  }
+  return (num / si[i].value).toFixed(digits).replace(rx, '$1') + si[i].symbol;
+}
+
+const populateTrends = (trends) => {
+  console.log(trends);
+  const popularTrends = trends
+    .sort((a, b) => b.tweet_volume - a.tweet_volume)
+    .slice(0, 10);
+
+  // create variety in trending topics, by skipping some if there is a large amount
+  const currentTrends =
+    popularTrends.length >= 10
+      ? popularTrends.filter((tweet, i) => i % 2 == 0)
+      : popularTrends;
+  let trendHTML = '';
+  currentTrends.forEach((trend) => {
+    trendHTML += `<li onclick="
+    selectTrend(this)"><div class="tweets-trending-title">${
+      trend.name
+    }</div><div class="tweets-trending-volume">${nFormatter(
+      parseInt(trend.tweet_volume),
+      1
+    )} Tweets</div></li>`;
+  });
+  document
+    .getElementById('tweets-trending-list')
+    .insertAdjacentHTML('beforeend', trendHTML);
+};
 /**
  * Save the next page data
  */
@@ -49,9 +100,10 @@ const saveNextPage = (metadata) => {
 /**
  * Handle when a user clicks on a trend
  */
-const selectTrend = (e) => {
-  const trend = e.target.innerText;
-  document.getElementById('search-box').value = trend;
+const selectTrend = (el) => {
+  console.log(el.querySelector('.tweets-trending-title').innerText);
+  const currentTrend = el.querySelector('.tweets-trending-title').innerText;
+  document.getElementById('search-box').value = currentTrend;
   getTwitterData();
 };
 
@@ -147,3 +199,5 @@ const buildVideo = (mediaList) => {
   videoContent += `</div>`;
   return videoExists ? videoContent : '';
 };
+getTrendData();
+getTwitterData();

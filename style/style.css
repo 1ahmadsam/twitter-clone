@@ -16,7 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #38444d;
+  border-right: 1px solid #38444d;
 }
 .main {
   flex: 1;
@@ -42,8 +42,8 @@ body {
   border-radius: 40px;
 }
 .tweets-trending h5 {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 800;
   color: #fff;
   margin-top: 0;
   margin-bottom: 10px;
@@ -54,14 +54,22 @@ body {
   margin: 0;
 }
 .tweets-trending ul li {
-  color: #a5a5a6;
-  font-size: 16px;
-  font-weight: 600;
-  border-top: 0.5px solid #d8d8d8;
-  padding: 8px 0;
+  border-top: 0.5px solid rgb(56, 68, 77);
+  padding: 15px 20px;
   cursor: pointer;
   padding-left: 20px;
   list-style-type: none;
+}
+.tweets-trending-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.tweets-trending-volume {
+  color: #a5a5a6;
+  font-weight: normal;
+  padding-top: 8px;
 }
 
 .tweets-list {
@@ -143,7 +151,7 @@ body {
   border: 1px solid #979797;
 }
 .next-page-container {
-  border: 1px solid #1c1c1c;
+  border: 1px solid #38444d;
   border-radius: 20px;
   color: #47525d;
   margin: 20px;
