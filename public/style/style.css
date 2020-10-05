@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: #15202b;
+}
+.container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+}
+.navigation-container {
+  width: 20%;
+  min-width: 70px;
+  max-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #38444d;
+  flex-shrink: 0;
+}
+.main {
+  flex: 0.3;
+  flex-shrink: 0.2;
+  display: flex;
+  flex-direction: column;
+}
+.tweets-sidebar-container {
+  display: flex;
+  flex: 0.1;
+}
+.tweets-sidebar {
+  width: 300px;
+  height: 500px;
+  margin-top: 30px;
+  background: #192734;
+  border-radius: 20px;
+  overflow: hidden;
+  position: fixed;
+}
+.tweets-trending {
+  height: 200px;
+  padding-top: 20px;
+  border-radius: 40px;
+}
+.tweets-trending h5 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.tweets-trending ul {
+  padding: 0;
+  margin: 0;
+}
+.tweets-trending ul li {
+  border-top: 0.5px solid rgb(56, 68, 77);
+  padding: 15px 20px;
+  cursor: pointer;
+  padding-left: 20px;
+  list-style-type: none;
+}
+.tweets-trending-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.tweets-trending-volume {
+  color: #a5a5a6;
+  font-weight: normal;
+  padding-top: 8px;
+}
+
+.tweets-list {
+  margin: 20px;
+  margin-top: 0;
+}
+.tweets-search-container {
+  margin: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #979797;
+}
+.tweets-search-container input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.tweets-search-container input:focus {
+  outline: none;
+}
+.tweets-search-container i {
+  color: white;
+  font-size: 30px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+.navigation {
+  color: white;
+  margin-top: 30px;
+  position: fixed;
+  width: 20%;
+  min-width: 70px;
+  max-width: 100px;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+}
+.logo i {
+  font-size: 40px;
+
+  color: #ffffff;
+}
+.home-link {
+  display: flex;
+  justify-content: center;
+  border-right: 3px solid #00adff;
+  align-items: center;
+  height: 40px;
+  margin-top: 20px;
+  /* identical to box height */
+}
+.home-link a {
+  text-decoration: none;
+  color: #00adff;
+}
+.home-link i {
+  font-size: 30px;
+}
+.profile-container {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 20px;
+}
+.profile {
+  width: 45px;
+  height: 45px;
+  background-image: url('../images/sami.jpg');
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 1px solid #979797;
+}
+.next-page-container {
+  border: 1px solid #38444d;
+  border-radius: 20px;
+  color: #47525d;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  visibility: hidden;
+}
+.next-page-container:hover {
+  background-color: #1c1c1c;
+}
