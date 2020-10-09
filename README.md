@@ -2,7 +2,7 @@
 
 ### Twitter Clone build using Javascript, and Firebase hosting
 
-### LIVE DEMO: [Twitter-Clone] https://twitter-clone-d1d7c.web.app/
+### LIVE DEMO: https://twitter-clone-d1d7c.web.app/
 
 ![Image of Twitter-Clone](images/twitter.jpg)
 
