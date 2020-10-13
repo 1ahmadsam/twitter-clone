@@ -1,6 +1,6 @@
 # Twitter Clone APP
 
-### Twitter Clone build using Javascript, and Firebase hosting
+### Twitter Clone build using Javascript, Node.js & Express backend and Firebase functions & hosting
 
 ### LIVE DEMO: https://twitter-clone-d1d7c.web.app/
 
